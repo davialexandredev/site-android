@@ -30,6 +30,7 @@
 body{
     background-color: var(--cor0);
     font-family: var(--font-padrao);
+    overflow-x: hidden;
 }
 
 a.externo::after{
@@ -69,22 +70,86 @@ header > p{
 
 nav{
     background-color: var(--cor5);
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
 }
 
-nav > a {
+
+
+nav li{
+    display: inline;
+    letter-spacing: 2px;
+}
+
+nav a {
     color: var(--cor1);
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    font-family: var(--font-padrao);
+    text-transform: capitalize;
     transition-duration: 0.3s;
+    padding-left: 20px;
+    padding-bottom: 40px;
 }
 
-nav > a:hover{
+@media (max-width: 500px){
+    nav a{
+        display: block;
+    }
+}
+
+nav a:hover{
     background-color: var(--cor3);
     color: var(--cor5);
+}
+
+
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background-color: white;
+    margin: 8px;
+}
+
+@media (max-width: 500px){
+    .nav-list{
+        position: absolute;
+        top: 50.4vh;
+        right: 0;
+        width: 50vw;
+        height: 43vh;
+        background-color: #063d1e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+}
+
+.nav-list.active{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+    from {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 main{
@@ -193,7 +258,13 @@ aside > p {
 aside > ul{
     list-style-type: '\2714\00A0\00A0';
     list-style-position: inside;
-    columns: 1;
+    columns: 2;
+}
+
+@media (max-width: 560px){
+    aside > ul {
+        columns: 1;
+    }
 }
 
 footer{
