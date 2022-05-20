@@ -28,7 +28,7 @@
 
 
 body{
-    background-color: var(--cor0);
+    background-color: #e3e1a631;
     font-family: var(--font-padrao);
     overflow-x: hidden !important;
 }
@@ -129,7 +129,7 @@ main{
     margin-bottom: 30px;
     padding: 20px;
     background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.377);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.150);
     border-radius: 0px 0px 10px 10px;
 }
 
@@ -137,24 +137,28 @@ main h1{
     color: var(--cor5);
     font-family: var(--font-android);
     font-weight: normal;
-    font-size: 1.8
+    font-size: 1.9em;
+    padding-top: 20px;
+    padding-bottom: 0px;
 }
 
 main h2{
     font-family: var(--font-android);
     color: var(--cor4);
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: normal;
     background-image: linear-gradient(to right, var(--cor1), transparent);
     text-indent: 8px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 main p{
-    margin: 15px 0px;
+    margin: 35px 0px;
     text-align: justify;
     text-indent: 20px;
-    font-size: 1.1em;
-    line-height: 1.7em
+    font-size: 1.2em;
+    line-height: 1.6em
 }
 
 main strong{
@@ -184,6 +188,15 @@ main img.pequeno{
     max-width: 350px;
     display: block;
     margin: auto;
+}
+
+@media (max-width: 420px) {
+    main  h1{
+        font-size: 1.5em;
+    }
+    main p {
+        font-size: 1.2em;
+    }
 }
 
 div.video{
